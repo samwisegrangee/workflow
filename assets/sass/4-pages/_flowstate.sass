@@ -1,0 +1,32 @@
+.flow-column
+	width: 50vw
+	margin: 0 auto
+
+textarea
+	margin: 1em
+	width: 100%
+	font-family: sans-serif
+	font-size: 1.2em
+	border: none
+	outline: none
+	background: none
+	resize: none
+
+	&:focus
+		outline: none
+
+.slow-fade
+	animation: fadeThreat 5s linear
+
+.hidden
+	opacity: 0
+
+@keyframes fadeThreat
+	from
+		opacity: 1
+	to
+		opacity: 0
+
+.stop-scrolling
+  height: 100%
+  overflow: hidden

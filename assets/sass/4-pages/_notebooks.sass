@@ -1,0 +1,101 @@
+.sky
+  height: 20em
+  background: $dark
+  overflow: hidden
+// n is number of stars required
+@function multiple-box-shadow($n)
+  $value: "#{random(2000)}px #{random(2000)}px #FFF"
+  @for $i from 2 through $n
+    $value: "#{$value} , #{random(2000)}px #{random(2000)}px #FFF"
+
+  @return unquote($value)
+
+
+$shadows-small: multiple-box-shadow(700)
+$shadows-medium: multiple-box-shadow(200)
+$shadows-big: multiple-box-shadow(100)
+
+#sstar
+  position: absolute
+  left: 60%
+  @media screen and (max-width: 320px)
+    left: 80%
+
+  top: 20%
+  width: 1px
+  height: 1px
+  background-color: #fff
+  z-index: 3
+  opacity: 0
+  transform-origin: 0 50%
+  border-radius: 50%
+  animation: ss 1s linear 1s*20
+
+#stars1
+  width: 1px
+  height: 1px
+  background: transparent
+  box-shadow: $shadows-small
+  opacity: 0
+  animation: animStar 50s linear infinite
+  //animation: set 0.4s*$speed reverse ease-in 0.6s*$speed forwards;
+  &:after
+    content: " "
+    position: absolute
+    top: 2000px
+    width: 1px
+    height: 1px
+    background: transparent
+    box-shadow: $shadows-small
+
+
+
+#stars2
+  width: 2px
+  height: 2px
+  background: transparent
+  box-shadow: $shadows-medium
+  opacity: 0
+  animation: animStar 100s linear infinite
+  //animation: set 0.4s*$speed reverse ease-in 0.6s*$speed forwards;
+  &:after
+    content: " "
+    position: absolute
+    top: 2000px
+    width: 2px
+    height: 2px
+    background: transparent
+    box-shadow: $shadows-medium
+
+
+
+#stars3
+  width: 3px
+  height: 3px
+  background: transparent
+  box-shadow: $shadows-big
+  opacity: 0
+  animation: animStar 150s linear infinite
+  //animation: set 0.4s*$speed reverse ease-in 0.6s*$speed forwards;
+  &:after
+    content: " "
+    position: absolute
+    top: 2000px
+    width: 3px
+    height: 3px
+    background: transparent
+    box-shadow: $shadows-big
+
+
+
+
+@keyframes animStar
+  0%
+    opacity: 0
+    transform: translateY(0px)
+
+  10%
+    opacity: 1
+
+  100%
+    transform: translateY(-2000px)

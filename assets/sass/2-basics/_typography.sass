@@ -1,0 +1,29 @@
+html
+	font-family: Georgia, "Times New Roman", serif
+	font-weight: 200
+	line-height: 1.5
+	-webkit-font-smoothing: antialiased
+	//Ridiculously Large Desktop
+	@media (min-width: 2000px)
+		font-size: 30px
+	// Large Desktop
+	@media (min-width: 1201px) and (max-width: 1999px)
+		font-size: 18px
+	//Portrait tablet to landscape and Desktop
+	@media (min-width: 768px) and (max-width: 1200px)
+		font-size: 17px
+	//Landscape phone to portrait tablet
+	@media (min-width: 481px) and (max-width: 767px)
+		font-size: 16px
+	// Landscape phones and down
+	@media (max-width: 480px)
+		font-size: 15px
+
+h1, h2, h3, h4, h5, h6
+	letter-spacing: 0.1em
+
+p
+	font-variant-ligatures: common-ligatures
+	font-weight: 300
+	font-size: 1.1em
+	line-height: 200%
